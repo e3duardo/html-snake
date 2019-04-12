@@ -5,6 +5,6 @@ I'm trying to implement the snake game using javascript, zero tools and google c
 If I can get the basics, I'll set some goals
 
 
-![Preview](preview?raw=true "Preview")
+![Preview](preview.png?raw=true "Preview")
 
 I did it! I'm going to improve another day.
