@@ -22,7 +22,7 @@ jobs:
             - ./node_modules
       - run:
           name: Building static files
-          command: npm start build
+          command: npm run build
       - store_artifacts:
           path: dist
           prefix: build
