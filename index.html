@@ -3,10 +3,81 @@
   <head>
     <meta charset="utf-8">
     <title>Snake - The Game</title>
+	 <style>
+	 	a{
+			text-decoration: none;
+		}
+	 	.Stage{
+			position: relative;
+			width: 750px;
+			height: 600px;
+			background: #fff;
+			border: 2px solid #bbb;
+			margin: 0 auto;
+			display: flex;
+		}
+		.Score{
+			background: #ddd;
+			padding: 10px;
+			flex: 1;
+			text-align: center;
+		}
+		.Score h2{
+			margin-top: 0;
+		}
+		.Score h4{
+			text-align: left;
+		}
+		.Scene{
+			position: relative;
+			width: 600px;
+			height: 100%;
+			background: #ddd;
+
+			background-size: 30px;
+			background-image: url('assets/images/block.png');
+			background-repeat: repeat;
+			filter: invert(100%);
+		}
+		.Block{
+			background: #444;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 30px;
+			height: 30px;
+			background-size: 30px;
+			background-image: url('assets/images/block.png');
+			filter: invert(100%);
+		}
+		.Food.Block{
+			filter: invert(80%);
+		}
+	 </style>
   </head>
   <body>
-  	<div class="container">
-  		<div class="pannel">
+  	<!-- <div class="container"> -->
+
+
+		<div class="Stage">
+			<div class="Score">
+			  	<h2>Snake game</h2>
+				<a href="https://github.com/e3duardo/snake" target="_blank">
+					<img src="assets/images/GitHub-Mark-32px.png" class="github">
+				</a>
+				<p><a href="javascript:void(0)" id="play">Play</a></p>
+			  	<hr>
+			  	<h4>Score: <span id="ScorePoints">0</span></h4>
+			  	<h4>Deaths: <span id="ScoreDeaths">0</span></h4>
+			  	<h4>Best Score: <span id="ScoreBestScore">0</span></h4>
+			</div>
+			<div class="Scene">
+				<div class="Food Block"></div>
+				<div class="Snake Block"></div>
+			</div>
+		</div>
+
+  		<!-- <div class="pannel">
 		  	<h2>Snake game</h2>
 			<a href="https://github.com/e3duardo/snake" target="_blank">
 				<img src="assets/images/GitHub-Mark-32px.png" class="github">
@@ -15,11 +86,9 @@
 		  	<h4>Score: <span id="score">0</span></h4>
 		  	<h4>Deths: <span id="deths">0</span></h4>
 		  	<h4>Best Score: <span id="bestScore">0</span></h4>
-	  	</div>
-	    <canvas id="game" width="600" height="600"></canvas>
-	    <script src="assets/js/snake.js"></script>
-	    <script src="assets/js/script.js"></script>
-	    <script src="assets/js/style.js"></script>
-    </div>
+	  	</div> -->
+	    <!-- <canvas id="game" width="600" height="600"></canvas> -->
+	    <script src="index.js"></script>
+    <!-- </div> -->
   </body>
 </html>
