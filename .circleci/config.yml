@@ -1,0 +1,42 @@
+version: 2.0
+jobs:
+  build:
+    branches:
+      ignore: gh-pages
+    working_directory: ~/snake
+    docker:
+      - image: e3duardo/node
+    steps:
+      - checkout
+      - run:
+          name: Update NPM + gh-pages
+          command: 'sudo npm install -g npm@latest gh-pages@2.0.1'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Running npm install
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Building static files
+          command: npm start build
+      - store_artifacts:
+          path: dist
+          prefix: build
+      - run:
+          name: Disable jekyll builds
+          command: touch dist/.nojekyll
+      - run:
+          name: Configure github
+          command: |
+            git config user.email "e3duardo@live.com"
+            git config user.name "Eduardo Santos"
+      - add_ssh_keys:
+          fingerprints:
+            - "{{ FINGERPRINT }}"
+      - run:
+          name: Deploy to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Update site" --dist dist
