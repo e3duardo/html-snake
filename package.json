@@ -1,0 +1,24 @@
+{
+  "name": "html-snake",
+  "version": "0.0.2",
+  "description": "try implementation of snake game",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e3duardo/html-snake.git"
+  },
+  "keywords": [
+    "snake",
+    "game",
+    "html",
+    "js"
+  ],
+  "author": "Eduardo Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e3duardo/html-snake/issues"
+  },
+  "homepage": "https://e3duardo.github.io/snake/"
+}
