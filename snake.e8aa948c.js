@@ -11,4 +11,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./Food":"VlcB","./Snake":"pJnK","./Score":"r3Jt"}],"Focm":[function(require,module,exports) {
 "use strict";var e=n(require("./src/Game"));function n(e){return e&&e.__esModule?e:{default:e}}var t=new e.default;t.update(),document.getElementById("play").addEventListener("click",function(e){t.isPlaying?t.pause():t.play()}),window.onblur=function(){t.pause()};
 },{"./src/Game":"GLet"}]},{},["Focm"], null)
-//# sourceMappingURL=/snake.e8aa948c.js.map
+//# sourceMappingURL=/html-snake/snake.e8aa948c.js.map
