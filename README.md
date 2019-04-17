@@ -1,4 +1,5 @@
 # ~~Snake~~Html-Snake
+[![CircleCI](https://circleci.com/gh/e3duardo/html-snake.svg?style=svg)](https://circleci.com/gh/e3duardo/html-snake)
 
 I'm trying to implement the snake game using javascript, zero tools and google chrome.
 
