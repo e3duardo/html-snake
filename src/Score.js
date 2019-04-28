@@ -12,7 +12,7 @@ class SnakeBlock {
 	tick = ()=>{
 		if(this.game.isPlaying){
 			this.points+=this.game.food.value;
-			
+
 			if (this.points > this.bestScore){
 				this.bestScore = this.points;
 				localStorage.setItem('bestScore', this.points);
@@ -28,9 +28,9 @@ class SnakeBlock {
 	}
 
 	update = ()=>{
-		document.getElementById("ScorePoints").innerHTML = this.points;
-		document.getElementById("ScoreDeaths").innerHTML = this.deaths;
-		document.getElementById("ScoreBestScore").innerHTML = this.bestScore;
+		document.getElementById('ScorePoints').innerHTML = this.points;
+		document.getElementById('ScoreDeaths').innerHTML = this.deaths;
+		document.getElementById('ScoreBestScore').innerHTML = this.bestScore;
 	}
 
 }

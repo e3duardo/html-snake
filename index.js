@@ -1,12 +1,12 @@
-import Game from './src/Game'
+import Game from './src/Game';
 
-const game = new Game();
+const game = new Game(20);
 game.update();
 // game.play();
 
 (function(){
 
-	document.getElementById('play').addEventListener("click", function(e) {
+	document.getElementById('play').addEventListener('click', ()=>{
 		if(game.isPlaying){
 			game.pause();
 		}else{
@@ -16,6 +16,6 @@ game.update();
 
 	window.onblur = ()=>{
 		game.pause();
-	}
+	};
 
 })();

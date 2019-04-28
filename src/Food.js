@@ -1,22 +1,17 @@
-class Food {
-  constructor(game) {
-	  this.foodTag = document.querySelector('.Food');
-	  this.game = game;
-	  this.randominize();
-	  this.x = 0;
-	  this.y = 0;
-	  this.value = 10;
-  }
+import Block from './Block';
 
-  randominize = ()=>{
-	  this.x = Math.floor((Math.random() * (this.game.width / this.game.scaleX)));
-	  this.y = Math.floor((Math.random() * (this.game.height / this.game.scaleY)));
-  }
+class Food extends Block {
+	constructor(game) {
+		super(game, document.querySelector('.Food'));
 
-  update = ()=>{
-	  this.foodTag.style.left = (this.x*this.game.scaleX) +'px';
-	  this.foodTag.style.top = (this.y*this.game.scaleY) +'px';
-  }
+		this.randomize();
+		this.value = 10;
+	}
+
+	randomize = ()=>{
+		this.x = Math.floor((Math.random() * (this.game.width / this.game.scale)));
+		this.y = Math.floor((Math.random() * (this.game.height / this.game.scale)));
+	}
 }
 
 export {Food as default};

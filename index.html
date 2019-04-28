@@ -3,57 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Snake - The Game</title>
-	 <style>
-	 	a{
-			text-decoration: none;
-		}
-	 	.Stage{
-			position: relative;
-			width: 750px;
-			height: 600px;
-			background: #fff;
-			border: 2px solid #bbb;
-			margin: 0 auto;
-			display: flex;
-		}
-		.Score{
-			background: #ddd;
-			padding: 10px;
-			flex: 1;
-			text-align: center;
-		}
-		.Score h2{
-			margin-top: 0;
-		}
-		.Score h4{
-			text-align: left;
-		}
-		.Scene{
-			position: relative;
-			width: 600px;
-			height: 100%;
-			background: #ddd;
-
-			background-size: 30px;
-			background-image: url('assets/images/block.png');
-			background-repeat: repeat;
-			filter: invert(100%);
-		}
-		.Block{
-			background: #444;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 30px;
-			height: 30px;
-			background-size: 30px;
-			background-image: url('assets/images/block.png');
-			filter: invert(100%);
-		}
-		.Food.Block{
-			filter: invert(80%);
-		}
-	 </style>
+	 <link href="index.less" rel="stylesheet" />
   </head>
   <body>
     <div class="Stage">
@@ -73,6 +23,7 @@
         <div class="Snake Block"></div>
       </div>
     </div>
+	 <script src="index.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139009939-1"></script>
     <script>
@@ -81,6 +32,5 @@
       gtag('js', new Date());
       gtag('config', 'UA-139009939-1');
     </script>
-    <script src="index.js"></script>	  
   </body>
 </html>

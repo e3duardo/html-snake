@@ -1,12 +1,7 @@
-var score = document.querySelector('#score');
-var deths = document.querySelector('#deths');
-var bestScore = document.querySelector('#bestScore');
-
 import SnakeBlock from './SnakeBlock';
 
 class Snake {
 	constructor(game) {
-		// this.snakeTag = document.querySelector('.Snake');
 		this.game = game;
 		this.autoMoveInterval;
 
@@ -16,7 +11,7 @@ class Snake {
 		this.blocks = [];
 		const divs = document.querySelectorAll('.Snake');
 		for (let i = 0; i < divs.length; ++i) {
-			const block = new SnakeBlock(this.game, divs[i]);
+			const block = new SnakeBlock(this, divs[i]);
 			this.blocks.push(block);
 		}
 
@@ -36,7 +31,7 @@ class Snake {
 			//moving references
 			this.tail.push({x: this.x, y: this.y});
 			while (this.tail.length > this.length) {
-			  this.tail.shift();
+				this.tail.shift();
 			}
 			this.x+=x;
 			this.y+=y;
@@ -74,15 +69,15 @@ class Snake {
 
 	eat = ()=>{
 		this.game.score.tick();
-		this.game.food.randominize();
+		this.game.food.randomize();
 
 		this.length++;
-		this.blocks.push(new SnakeBlock(this.game));
+		this.blocks.push(new SnakeBlock(this));
 	}
 
 	died = ()=>{
-		this.game.score.tickDeath()
-		this.game.food.randominize();
+		this.game.score.tickDeath();
+		this.game.food.randomize();
 
 		clearInterval(this.autoMoveInterval);
 
@@ -95,16 +90,22 @@ class Snake {
 	}
 
 	get x (){
-		return this.blocks[0].x;
+		if(this.blocks.length > 0)
+			return this.blocks[0].x;
+		return 0;
 	}
 	set x (x){
-		return this.blocks[0].x = x;
+		if(this.blocks.length > 0)
+			this.blocks[0].x = x;
 	}
 	get y (){
-		return this.blocks[0].y;
+		if(this.blocks.length > 0)
+			return this.blocks[0].y;
+		return 0;
 	}
 	set y (y){
-		return this.blocks[0].y = y;
+		if(this.blocks.length > 0)
+			this.blocks[0].y = y;
 	}
 }
 
