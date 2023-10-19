@@ -30,7 +30,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "less": "^3.9.0",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "src": "^1.1.2"
